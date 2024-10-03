@@ -1,0 +1,31 @@
+codigo html 
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Página de Interação</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Bem-vindo! </h1>
+        <input type="text" id="nome" placeholder="Digite seu nome">
+        <button id="enviar">Enviar</button>
+        <p id="mensagem"></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+javascrip
+document.getElementById('enviar').addEventListener('click', function() {
+    const nome = document.getElementById('nome').value;
+    const mensagem = document.getElementById('mensagem');
+
+    if (nome.trim() === '') {
+        mensagem.textContent = 'Por Favor, insira seu nome';
+    } else {
+        mensagem.textContent = `Olá, ${nome}! Bem-vindo á página do estudante`;
+    }
+});

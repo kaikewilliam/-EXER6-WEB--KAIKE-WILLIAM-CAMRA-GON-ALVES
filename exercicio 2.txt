@@ -1,0 +1,42 @@
+codigo html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Página de Iteração</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de lista</h1>
+        <input type="number" id="numero" placeholder="Digite um número">
+        <input type="text" id="nome" placeholder="Digite seu nome">
+        <button id="enviar">Enviar</button>
+        <p id="mensagem"></p>
+        <ol id="lista"></ol>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+javascrip
+document.getElementById('enviar').addEventListener('click', function() {
+    const numero = parseInt(document.getElementById('numero').value);
+    const nome = document.getElementById('nome').value;
+    const mensagem = document.getElementById('mensagem');
+    const lista = document.getElementById('lista');
+    
+    mensagem.textContent = '';
+    lista.innerHTML = '';
+
+    if (isNaN(numero) || numero <= 0) {
+        mensagem.textContent = 'Por Favor, insira um número válido.';
+    } else if (numero === 5) {
+        for (let i = 1; i <= numero; i++) {
+            const item = document.createElement('li');
+            item.textContent = `${i}. ${nome}`;
+            lista.appendChild(item);
+        }
+    }
+});
